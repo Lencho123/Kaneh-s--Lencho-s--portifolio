@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+.centered {
+  @apply flex items-center gap-[0.5rem];
+}
+.darkBtn {
+  @apply text-white bg-green-300 p-[0.5rem] rounded-3xl hover:bg-green-200 active:bg-green-100;
+}
+.lightBtn {
+  @apply text-white bg-green-500 p-[0.5rem] rounded-3xl hover:bg-green-400 active:bg-green-200;
+}
+.pCard {
+  @apply  p-5 rounded-xl  shadow-green-500 shadow-md mt-[1rem];
+}
+.serviceCard {
+  @apply p-5  rounded-xl  shadow-green-500 shadow-md mt-[1rem];
+}
+.h4 {
+  @apply text-xl sm:text-2xl font-semibold mt-[1rem];
+}
+.active-link {
+  @apply text-teal-500 border border-lime-400 rounded-md p-1;
+}
+
+.header-light {
+  @apply flex relative justify-between  shadow-md shadow-green-100 p-[0.5rem] items-center;
+}
+.header-dark {
+  @apply flex relative justify-between shadow-md shadow-green-900 p-[0.5rem] items-center;
+}
+:root {
+  --background: #ffffffc4;
+  --foreground: #2b2b2b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2b2b2b;
+    --foreground: #ffffffc4;
+  }
+}
+
+.dark-mode {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
+}
+
+.glow {
+  @apply bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl animate-pulse;
+}
+
+
+/* Add custom 3D text effect */
+.custom-3d-text {
+  position: relative;
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.4), 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  animation: glowing 1.5s infinite alternate;
+}
+
+/* Glowing animation */
+@keyframes glowing {
+  0% {
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.4), 
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.2),
+      0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    text-shadow: 
+      0 3px 6px rgba(0, 0, 0, 0.4), 
+      0 6px 12px rgba(0, 0, 0, 0.3),
+      0 12px 24px rgba(0, 0, 0, 0.2),
+      0 24px 48px rgba(0, 0, 0, 0.1);
+  }
+}
