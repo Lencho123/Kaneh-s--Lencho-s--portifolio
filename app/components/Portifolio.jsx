@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import bankdash from "../../public/bank-dash.png";
-import quizapp from "../../public/quiz-APP.png";
+import quizapp from "../../public/quiz-app.png";
 import leetcode from "../../public/leetcode.png";
 import googleform from "../../public/google-form.png";
 import Image from "next/image";
