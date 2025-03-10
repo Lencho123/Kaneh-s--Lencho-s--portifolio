@@ -32,7 +32,7 @@ const SideBar = () => {
           className={
             curPage === "About" ? "active-link md:w-2/3 centered" : "centered"
           }
-          href="/pages/about"
+          href="/about"
           onClick={() => setCurPage("About")}
         >
           <User /> About
@@ -41,7 +41,7 @@ const SideBar = () => {
           className={
             curPage === "Service" ? "active-link md:w-2/3 centered" : "centered"
           }
-          href="/pages/services"
+          href="/services"
           onClick={() => setCurPage("Service")}
         >
           <Briefcase /> Service
@@ -52,7 +52,7 @@ const SideBar = () => {
               ? "active-link md:w-2/3 centered"
               : "centered"
           }
-          href="/pages/portifolio"
+          href="/portifolio"
           onClick={() => setCurPage("Portifolio")}
         >
           <Grid /> Portifolio
@@ -61,7 +61,7 @@ const SideBar = () => {
           className={
             curPage === "Contact" ? "active-link md:w-2/3 centered" : "centered"
           }
-          href="/pages/contact"
+          href="/contact"
           onClick={() => setCurPage("Contact")}
         >
           <Contact /> Contact

@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layoutOne/Header";
 import SideBar from "./components/layoutOne/SideBar";
-import { SideBarProvider } from "./context/SideBarProvider";
 import LayoutSetting from "./components/LayoutSetting";
 import NavigationBar from "./components/Portrait/NavigationBar";
 import Home from "./components/Home";
@@ -15,7 +14,7 @@ import { useStore } from "./context/Store/state-store";
 import Portifolio from "./components/Portifolio";
 import Contact from "./components/Contact";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,11 +33,9 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   const curPage = useStore((state) => state.curPage);
-  // const setCurPage = useStore((state) => state.setCurPage);
   const showSideBar = useStore((state) => state.showSideBar);
   const setShowSideBar = useStore((state) => state.setShowSideBar);
   const layoutOne = useStore((state) => state.layoutOne);
-  // const setLayoutOne = useStore((state) => state.setLayoutOne);
   const layoutSetting = useStore((state) => state.layoutSetting);
   const setLayoutSetting = useStore((state) => state.setLayoutSetting);
   const patriatShowSideBar = useStore((state) => state.patriatShowSideBar);
@@ -47,7 +44,6 @@ export default function RootLayout({ children }) {
   );
   const darkMode = useStore((state) => state.darkMode);
   const animateSettingLayout = useStore((state) => state.animateSettingLayout);
-  // const setDarkMode = useStore((state) => state.setDarkMode);
   const pathname = usePathname();
   const isMounted = useStore((state) => state.isMounted);
   const setIsMounted = useStore((state) => state.setIsMounted);
@@ -74,7 +70,7 @@ export default function RootLayout({ children }) {
             <div className="flex relative sm:grid sm:grid-cols-[0.2fr_0.8fr]">
               <motion.div
                 key={showSideBar}
-                initial={{ translateX:isMounted ? -100 : 0 }}
+                initial={{ translateX: isMounted ? -100 : 0 }}
                 animate={{ translateX: 0 }}
                 transition={{ duration: 0.4 }}
                 className={`
